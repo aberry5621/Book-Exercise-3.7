@@ -104,7 +104,7 @@ int main() {
         }
     }
     
-    cout << "The ranked numbers are " << n1 << n2 << n3 << endl;
+    cout << "The ranked numbers are " << d1 << d2 << d3 << endl;
     
     
     return 0;
