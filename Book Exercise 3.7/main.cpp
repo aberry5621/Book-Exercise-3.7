@@ -7,6 +7,7 @@
 //
 //  Book exercise 3.7 - Sort three integers
 //
+// TODO: accommodate equivalent inputs in ranking, e.g. input 4 8 4
 
 #include <iostream>
 #include <cmath>
