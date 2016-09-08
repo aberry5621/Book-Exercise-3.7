@@ -14,99 +14,56 @@
 using namespace std;
 
 int main() {
-    // insert code here...
-    cout << "Sort Three Integers \n";
-    // D
-    int n1 = 0.0;
-    int n2 = 0.0;
-    int n3 = 0.0;
-    int d1 = 0.0;
-    int d2 = 0.0;
-    int d3 = 0.0;
-    
-    // I
-    cout << "Enter three integers: ";
-    cin >> n1 >> n2 >> n3;
-    
-    // P // O
-    
-    if (n1 < n2) {
-        // n1 is smaller than n2
-    } else if (n1 < n3) {
-        // n1 is smaller than n3
-    } else {
-        // n1 is bigger than or equal to n2 or n3
-    }
 
-    // Find first number to display (smallest)
-    if (n1 < n2) {
-        if (n1 < n3) {
-            // n1 is smaller than n2 and n3
-            cout << "The smallest number is " << n1 << endl;
-            d1 = n1;
-        }
-    }
-    if (n2 < n1) {
-        if (n2 < n3) {
-            // n2 is smaller than n1 and n3
-            cout << "The smallest number is " << n2 << endl;
-            d1 = n2;
-        }
-    }
-    if (n3 < n1) {
-        if (n3 < n2) {
-            // n3 is smaller than n1 and n2
-            cout << "The smallest number is " << n3 << endl;
-            d1 = n3;
-        }
-    }
-    // Find second number to display (middle)
-    if (n1 < n2) {
-        if (n1 > n3) {
-            // n1 is smaller than n2 and greater than n3
-            cout << "The middle number is " << n1 << endl;
-            d2 = n1;
-        }
-    }
-    if (n2 < n1) {
-        if (n2 > n3) {
-            // n2 is smaller than n1 and greater than n3
-            cout << "The middle number is " << n2 << endl;
-            d2 = n2;
-        }
-    }
-    if (n3 < n1) {
-        if (n3 > n2) {
-            // n3 is smaller than n1 and greater than n2
-            cout << "The middle number is " << n3 << endl;
-            d2 = n3;
-        }
-    }
-    // Find third number to display (highest)
-    if (n1 > n2) {
-        if (n1 > n3) {
-            // n1 is greater than n2 and greater than n3
-            cout << "The highest number is " << n1 << endl;
-            d3 = n1;
-        }
-    }
-    if (n2 > n1) {
-        if (n2 > n3) {
-            // n2 is smaller than n1 and greater than n3
-            cout << "The highest number is " << n2 << endl;
-            d3 = n2;
-        }
-    }
-    if (n3 > n1) {
-        if (n3 > n2) {
-            // n3 is smaller than n1 and greater than n2
-            cout << "The highest number is " << n3 << endl;
-            d3 = n3;
-        }
-    }
-    
-    cout << "The ranked numbers are " << d1 << d2 << d3 << endl;
-    
-    
-    return 0;
+	cout << "Sort Three Integers \n";
+	// D
+	int a = 0.0, b = 0.0, c = 0.0;
+	int d1 = 0.0, d2 = 0.0, d3 = 0.0;
+
+	// I
+	cout << "Enter three integers (1 2 3): ";
+	cin >> a >> b >> c;
+
+	// P // O
+
+	// primary true path
+	// a < b TRUE
+	if (a < b) {
+		// a < c
+		if (a < c) {
+			// b < c
+			if (b < c) {
+				cout << "abc" << endl;
+				d1 = a, d2 = b, d3 = c;
+			} else { 
+				cout << "acb" << endl;
+				d1 = a, d2 = c, d3 = b;
+			}
+		} else { 
+			cout << "cab" << endl;
+			d1 = c, d2 = a, d3 = b;
+		}
+	}
+	// primary false path 
+	// a < b FALSE
+	else {
+		// a < c 
+		if (a < c) {
+			cout << "bac" << endl;
+			d1 = b, d2 = a, d3 = c;
+		} else {
+			// b < c
+			if (b < c) {
+				cout << "bca" << endl;
+				d1 = b, d2 = c, d3 = a;
+			} else { 
+				cout << "cba" << endl;
+				d1 = c, d2 = b, d3 = a;
+			}
+		}
+	}
+
+	cout << "The ranked numbers are " << d1 << d2 << d3 << endl;
+
+	return 0;
 }
